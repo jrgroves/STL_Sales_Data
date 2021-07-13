@@ -1,8 +1,11 @@
+#This file processes the sales data from the assessor data
+#Jeremy R. Groves
+#Created: July 5, 2021
+
 rm(list=ls())
 library(foreign)
 library(tidyverse)
 
-this is a test
 clean<-function(x){
 x<- x %>%
     mutate(SALEDT = as.character(SALEDT)) %>%
