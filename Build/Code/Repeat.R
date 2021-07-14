@@ -24,3 +24,13 @@ temp<-sale %>%
             distinct(PARID)
 
 rep<-merge(temp,sale,by="PARID",all.x=TRUE) #All Repeat Sales in Data
+
+#Merge with Dwelling Data 
+#NOTE: Take the dwell_dat from the STL_MASTER_DATA project
+
+load("./Build/Input/dwell_dat.RData")
+
+rep2<-merge(rep,dwell,by="PARID") #APPEARS TO BE ABOUT 8k OBSERVATIONS THAT ARE 
+###################################EITHER MISSING IN DATA OR APARTMENT COMPLEXES.
+
+

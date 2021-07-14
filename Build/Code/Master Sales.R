@@ -83,4 +83,7 @@ for(i in b){
   rm(sales2) #Removes the sales2 data for next iteration
 }
 
+#Clean one observation with bad date
+sales$SALEDT[which(sales$SALEDT=="0203-10-29")]<-"2003-10-29"
+
 save(sales,file="./Build/OUtput/Master Sales.RData")
